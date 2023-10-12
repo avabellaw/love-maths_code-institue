@@ -31,6 +31,8 @@ function runGame(gameType){
     } else if(gameType === "multiply"){
         setOperands(num1, num2);
         displayMultiplyQuestion();
+    } else if(gameType === "subtract"){
+        displaySubtractQuestion(num1, num2);
     } else {
         alert(`Unknown game type ${gameType}`);
         throw `Unknown game type ${gameType}, aborted`;
@@ -104,8 +106,9 @@ function displayAdditionQuestion(){
     document.getElementById("operator").textContent = "+";
 }
 
-function displaySubtractQuestion(){
-
+function displaySubtractQuestion(num1, num2){
+    setOperands(num1 < num2 ? num2 : num1, num1 < num2 ? num1 : num2);
+    document.getElementById("operator").textContent = "-";
 }
 function displayMultiplyQuestion(){
     document.getElementById("operator").textContent = "x";
