@@ -13,9 +13,16 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 });
 
+/**
+ * The main game "loop"
+ * Called intially and when the user's answer has been processed
+ */
 function runGame(){
 
-}
+    // Sets the operands to random numbers between 1 and 25
+    let num1 = Math.floor(Math.random * 25) + 1;
+    let num2 = Math.floor(Math.random * 25) + 1;
+ }
 
 function checkAnswer(){
 
